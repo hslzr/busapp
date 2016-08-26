@@ -50,6 +50,11 @@ angular.module('starter.controllers', [])
     { title: 'Rap', id: 5 },
     { title: 'Cowbell', id: 6 }
   ];
+
+})
+
+.controller('MapCtrl', function($scope) {
+  $scope.text = "Big O'Ra";
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
