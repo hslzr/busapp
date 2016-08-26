@@ -58,8 +58,16 @@ angular.module('starter.controllers', ['ngMap'])
 
   $scope.map = {
     center: "25.669880, -100.377837",
-    zoom: "16"
+    zoom: 15
   }
+
+  $scope.markers = [
+    {pos:[25.669880,-100.378]},
+    {pos:[25.669880,-100.379]},
+    {pos:[25.669880,-100.380]},
+    {pos:[25.669880,-100.381]},
+    {pos:[25.669880,-100.382]}
+  ]
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {

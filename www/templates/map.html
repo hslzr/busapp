@@ -3,7 +3,13 @@
     <ng-map
           center="{{ map.center }}"
           zoom="{{ map.zoom }}"
+          disable-default-u-i="true"
       >
+      <!-- <marker ng-repeat="m in markers" -->
+          <!-- position="{{m.pos}}" -->
+      <!-- > -->
+      <!-- </marker> -->
+      <traffic-layer></traffic-layer>
     </ng-map>
     {{ text }}
   </ion-content>
