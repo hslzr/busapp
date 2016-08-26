@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ngMap'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
@@ -53,8 +53,13 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('MapCtrl', function($scope) {
-  $scope.text = "Big O'Ra";
+.controller('MapCtrl', function($scope, NgMap) {
+  $scope.text = "Hallowed be thy name";
+
+  $scope.map = {
+    center: "25.669880, -100.377837",
+    zoom: "16"
+  }
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
