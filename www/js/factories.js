@@ -44,11 +44,13 @@ angular.module('starter.factories', [])
 
   .factory('Route', function($http, $ionicPopup, RouteService) {
     return {
-      find = function(id) {
-        return RouteService.getRoute(id)
+      find: function(id) {
+        return RouteService.getRoute(id);
+      },
+
+      all: function(id) {
+        return RouteService.all;
       }
-
-
 
     }
   })
