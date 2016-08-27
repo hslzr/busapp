@@ -22,6 +22,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ng-token-auth'])
   });
 })
 
+
 .config(function($stateProvider, $urlRouterProvider, $authProvider, $locationProvider) {
 
   $authProvider.configure({
@@ -40,12 +41,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ng-token-auth'])
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl',
-    resolve: {
-      auth: function($auth) {
-        return $auth.validateUser();
-      }
-    }
+    controller: 'AppCtrl'
+    // resolve: {
+    //   auth: function($auth) {
+    //     return $auth.validateUser();
+    //   }
+    // }
   })
 
   .state('app.map', {
