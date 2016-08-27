@@ -41,7 +41,7 @@ angular.module('starter.controllers', ['ngMap', 'starter.factories'])
   };
 })
 
-.controller('RouteCtrl', function($scope, $stateParams) {
+.controller('RouteCtrl', function($scope, $stateParams, Route) {
 
   $scope.route = Route.find($stateParams.routeId)
 

@@ -45,11 +45,21 @@ angular.module('starter.factories', [])
   .factory('Route', function($http, $ionicPopup, RouteService) {
     return {
       find: function(id) {
-        return RouteService.getRoute(id);
+        // return RouteService.getRoute(id);
+        return {
+          id: id,
+          name: 'Sample'
+        }
       },
 
       all: function(id) {
-        return RouteService.all;
+        // return RouteService.all;
+        return [
+          {id: 1, name: 'Zample'},
+          {id: 2, name: 'Zample'},
+          {id: 3, name: 'Zample'},
+          {id: 4, name: 'Zample'}
+        ]
       }
 
     }
