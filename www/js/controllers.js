@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['ngMap'])
+angular.module('starter.controllers', ['ngMap', 'starter.factories'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
@@ -42,8 +42,8 @@ angular.module('starter.controllers', ['ngMap'])
 })
 
 .controller('RouteCtrl', function($scope, $stateParams) {
-  $scope.name = "Samthing"
-  $scope.routeId = $stateParams.routeId
+
+  $scope.route = Route.find($stateParams.routeId)
 
   $scope.map = {
     center: "25.678979, -100.321781",

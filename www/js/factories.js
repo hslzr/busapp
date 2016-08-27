@@ -1,6 +1,26 @@
 angular.module('starter.factories', [])
 
   .service('RouteService', function($http, $ionicPopup) {
+
+    this.all = function() {
+      $http({
+        method: 'GET',
+        url: 'sadklh',
+        headers: {
+          'Authorization': 'Basic 242049',
+          'Accept': 'application/json'
+        }
+      }).then(function(response) {
+        console.log(response)
+      }, function(response) {
+        console.log(response)
+        var alert = $ionicPopup.alert({
+          title: 'Error de conexión',
+          templateUrl: 'templates/popups/network_error.html'
+        })
+      });
+    }
+
     this.getRoute = function(id) {
       $http({
         method: 'GET',
@@ -22,7 +42,12 @@ angular.module('starter.factories', [])
     }
   })
 
-  .factory('Route', function($http, $ionicPopup) {
+  .factory('Route', function($http, $ionicPopup, RouteService) {
     return {
+      find = function(id) {
+        return RouteService.getRoute(id)
+      }
+
+
     }
   })
