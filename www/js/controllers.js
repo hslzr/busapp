@@ -41,16 +41,25 @@ angular.module('starter.controllers', ['ngMap'])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
+.controller('RouteCtrl', function($scope, $stateParams) {
+  $scope.name = "Samthing"
+  $scope.routeId = $stateParams.routeId
 
+  $scope.map = {
+    center: "25.678979, -100.321781",
+    zoom: 12
+  }
+})
+
+.controller('FavRoutesCtrl', function($scope) {
+  $scope.favorite_routes = [
+    {id: 1, name: 'R-70'},
+    {id: 2, name: 'R-71'},
+    {id: 3, name: 'R-72'},
+    {id: 4, name: 'R-73'},
+    {id: 5, name: 'R-74'},
+    {id: 6, name: 'R-75'}
+  ]
 })
 
 .controller('MapCtrl', function($scope, NgMap) {

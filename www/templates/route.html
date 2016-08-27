@@ -1,0 +1,12 @@
+<ion-view view-title="{{ name }}">
+  <ion-content>
+    <ng-map
+          center="{{ map.center }}"
+          zoom="{{ map.zoom }}"
+          disable-default-u-i="true"
+      >
+    </ng-map>
+    <h1>{{ name }}</h1>
+    <h3>ID: {{ routeId }}</h3>
+  </ion-content>
+</ion-view>
