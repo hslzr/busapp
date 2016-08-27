@@ -16,6 +16,8 @@ angular.module('starter.controllers', ['ngMap', 'starter.factories', 'ngCordova'
 
   // Form data for the login modal
 
+  // drivers?search_distance=100
+
 
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
@@ -35,7 +37,7 @@ angular.module('starter.controllers', ['ngMap', 'starter.factories', 'ngCordova'
 })
 
 .controller('RoutesCtrl', function($scope) {
-  $scope.favorite_routes = [
+  $scope.routes = [
     {id: 1, name: 'R-70'},
     {id: 2, name: 'R-71'},
     {id: 3, name: 'R-72'},
@@ -43,6 +45,12 @@ angular.module('starter.controllers', ['ngMap', 'starter.factories', 'ngCordova'
     {id: 5, name: 'R-74'},
     {id: 6, name: 'R-75'}
   ]
+
+  $scope.updateRoutes = function(RouteService) {
+    window.localStorage['routes'] = RouteService.all;
+    $scope.routes = window.localStorage['routes'];
+    $scope.$broadcast('scroll.refreshComplete');
+  }
 })
 
 .controller('MapCtrl', function($scope, NgMap, $cordovaGeolocation) {
@@ -52,6 +60,8 @@ angular.module('starter.controllers', ['ngMap', 'starter.factories', 'ngCordova'
     center: "25.669880, -100.377837",
     zoom: 15
   }
+
+  var bounds = new google.maps.LatLngBounds();
 
   $scope.markers = [
     {pos:[25.669880,-100.378]},

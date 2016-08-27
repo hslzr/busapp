@@ -5,11 +5,11 @@ angular.module('starter.factories', [])
     this.all = function() {
       $http({
         method: 'GET',
-        url: 'sadklh',
-        headers: {
-          'Authorization': 'Basic 242049',
-          'Accept': 'application/json'
-        }
+        url: 'http://busapp-acn.herokuapp.com/api/routes.json',
+        // headers: {
+        //   'Authorization': 'Basic 242049',
+        //   'Accept': 'application/json'
+        // }
       }).then(function(response) {
         console.log(response)
       }, function(response) {
@@ -24,16 +24,16 @@ angular.module('starter.factories', [])
     this.getRoute = function(id) {
       $http({
         method: 'GET',
-        url: 'asdlkfjh',
-        headers: {
-          'Authorization': 'Basic 235769sadkjf',
-          'Accept': 'application/json'
-        }
+        url: 'http://busapp-acn.herokuapp.com/api/routes/' + id + ".json"
+        // headers: {
+        //   'Authorization': 'Basic 235769sadkjf',
+        //   'Accept': 'application/json'
+        // }
       }).then(function(response) {
-        // if success
+        console.log(response)
         console.log(response)
       }, function(response) {
-        // If it fails
+        console.log(response)
         var alert = $ionicPopup.alert({
           title: 'Error de conexión',
           templateUrl: 'templates/popups/network_error.html'

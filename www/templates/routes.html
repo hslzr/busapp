@@ -1,5 +1,6 @@
-<ion-view view-title="Rutas favoritas">
+<ion-view view-title="Rutas">
   <ion-content>
+    <ion-refresher on-refresh="updateRoutes()" pulling-text="Deslice hacia abajo para actualizar..."></ion-refresher>
     <ion-list>
       <ion-item ng-repeat="route in favorite_routes" href="#/app/routes/{{ route.id }}" >
         {{ route.name }}
