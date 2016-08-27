@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['ngMap', 'starter.factories'])
+angular.module('starter.controllers', ['ngMap', 'starter.factories', 'ngCordova'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
@@ -62,7 +62,7 @@ angular.module('starter.controllers', ['ngMap', 'starter.factories'])
   ]
 })
 
-.controller('MapCtrl', function($scope, NgMap) {
+.controller('MapCtrl', function($scope, NgMap, $cordovaGeolocation) {
   $scope.text = "Hallowed be thy name";
 
   $scope.map = {
@@ -76,7 +76,24 @@ angular.module('starter.controllers', ['ngMap', 'starter.factories'])
     {pos:[25.669880,-100.380]},
     {pos:[25.669880,-100.381]},
     {pos:[25.669880,-100.382]}
-  ]
+  ];
+
+  var options = { timeout: 10000, enableHighAccuracy: false };
+
+  $cordovaGeolocation
+    .getCurrentPosition(options)
+    .then(function(position) {
+      $scope.position = {
+        lat: position.coords.latitude,
+        long: position.coords.longitude
+      };
+
+      $scope.map.center = $scope.position.lat + ", " + $scope.position.long;
+    }, function(position) {
+      console.log(position)
+    });
+
+
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {

@@ -5,6 +5,17 @@
           zoom="{{ map.zoom }}"
           disable-default-u-i="true"
       >
+      <shape id="circle" name="circle"
+            fill-color="blue"
+            fill-opacity="1"
+            stroke-color="#000"
+            stroke-opacity="0"
+            stroke-weight="0"
+            radius="30"
+            center="{{ position.lat }}, {{position.long}}"
+            editable="false"
+            centered="true">
+      </shape>
       <!-- <marker ng-repeat="m in markers" -->
           <!-- position="{{m.pos}}" -->
       <!-- > -->
