@@ -51,7 +51,7 @@ angular.module('starter.controllers', ['ngMap', 'starter.factories'])
   }
 })
 
-.controller('FavRoutesCtrl', function($scope) {
+.controller('RoutesCtrl', function($scope) {
   $scope.favorite_routes = [
     {id: 1, name: 'R-70'},
     {id: 2, name: 'R-71'},

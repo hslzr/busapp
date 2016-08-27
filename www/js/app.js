@@ -51,18 +51,18 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   })
 
-  .state('app.favorite_routes', {
-    url: '/favorite_routes',
+  .state('app.routes', {
+    url: '/routes',
     views: {
       'menuContent': {
-        templateUrl: 'templates/favorite_routes.html',
-        controller: 'FavRoutesCtrl'
+        templateUrl: 'templates/routes.html',
+        controller: 'RoutesCtrl'
       }
     }
   })
 
   .state('app.favorite_route', {
-    url: '/favorite_routes/:routeId',
+    url: '/routes/:routeId',
     views: {
       'menuContent': {
         templateUrl: 'templates/route.html',
